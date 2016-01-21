@@ -1,0 +1,9 @@
+---
+- name: common
+  hosts: elastic_servers
+  roles:
+  - role: elastic
+
+
+
+

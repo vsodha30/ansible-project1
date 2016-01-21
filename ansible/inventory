@@ -1,0 +1,11 @@
+[elastic_servers]
+mongo_2 ansible_ssh_port=2222 var=app1
+mongo_3 ansible_ssh_port=2200 var=app2
+mongo_4 ansible_ssh_port=2201 var=app3
+
+[primary_servers]
+mongo_2 ansible_ssh_port=2222 var=app1
+
+[secondary_servers]
+mongo_3 ansible_ssh_port=2200 var=app2
+mongo_4 ansible_ssh_port=2201 var=app3

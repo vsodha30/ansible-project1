@@ -1,0 +1,11 @@
+# The global variable file mongodb installation
+
+# The directory prefix where the database files would be stored
+mongodb_datadir_prefix: /data/
+
+iface: enp0s8
+
+# The password for admin user
+mongo_admin_pass: 123456
+
+clustername: rs0

@@ -1,0 +1,35 @@
+---
+- name: install the latest version of Java
+  yum: name=java-1.8.0-openjdk.x86_64 state=latest
+
+
+- name: download
+  shell: "wget {{elastic_url}} chdir=~ creates=~/elasticsearch-2.1.1.tar.gz"
+
+
+- name: untar
+  shell: "chdir=~ tar xvf elasticsearch-2.1.1.tar.gz creates=~/elasticsearch-2.1.1"
+
+
+
+#- name: moving elasticsearch folder to usrshare
+ # become: yes
+#  become_user: vagrant
+#  shell: "mv /home/vagrant/elasticsearch-2.1.1 /usr/share/elasticsearch"
+
+- name: Configure elastic
+  template: src=mongod.conf.j2 dest=~/elasticsearch-2.1.1/config/elasticsearch.yml
+
+ # template: src=mongod.conf.j2 dest=/usr/share/elasticsearch/config/elasticsearch.yml
+   #owner=root group=root mode=0644
+
+#- name: Install elasticsearch-head plugin
+#  shell: "chdir=~/elasticsearch-2.1.1 ~/elasticsearch-2.1.1/bin/plugin install mobz/elasticsearch-head"
+ # creates=/home/vagrant/elasticsearch-2.1.1/plugins/head
+#  become: yes
+#  shell: "chdir=/usr/share/elasticsearch /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head creates=/usr/share/elasticsearch/plugins/head"
+
+
+- name: Run elastic search on each server
+  shell: "~/elasticsearch-2.1.1/bin/elasticsearch"
+
