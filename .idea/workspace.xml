@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e49fc3bc-8261-4b41-9059-028794aaff22" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ansible/roles/elastic/templates/mongod.conf.j2" afterPath="$PROJECT_DIR$/ansible/roles/elastic/templates/mongod.conf.j2" />
-    </list>
+    <list default="true" id="e49fc3bc-8261-4b41-9059-028794aaff22" name="Default" comment="" />
     <ignored path="ansible-mongodb.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
